@@ -1,0 +1,10 @@
+- args:
+    cascade: false
+    read_only: false
+    sql: |-
+      alter table "public"."dinner"
+                 add constraint "dinner_vegetable_fkey"
+                 foreign key ("vegetable")
+                 references "public"."vegetable"
+                 ("name") on update restrict on delete restrict;
+  type: run_sql
